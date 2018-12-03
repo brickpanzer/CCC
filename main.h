@@ -3,14 +3,64 @@
 #define MAIN_H
 
 #include <vector>
+#include <cmath>
+
+class Clicker{
+public:
+    Clicker(std::string,double,unsigned long long int);
+    ~Clicker();
+    //increases unit count and modifies cost of next unit
+    void addUnit();
+    //called when an upgrade is purchased, modifies cps per unit
+    void applyUpgrade(double);
+
+    int getUnits();
+    double getCpsmod();
+private:
+    std::string type;
+    int units;
+    double cpsMod;
+    unsigned long long int cost;
+};
+
+Clicker::Clicker(std::string t,double c,unsigned long long int co){
+    type = t;
+    cpsMod = c;
+    cost = co;
+    units = 0;
+}
+
+Clicker::~Clicker(){
+
+}
+
+void Clicker::addUnit(){
+    units++;
+    if(cost > 1,000,000,000,000,000,000){
+        cost = cost + ((1/(units+1))*exp(units)+1);
+    }
+}
+
+void Clicker::applyUpgrade(double upgrade){
+    cpsMod = cpsMod * upgrade;
+}
+
+int Clicker::getUnits(){
+    return units;
+}
+
+double Clicker::getCpsmod(){
+    return cpsMod;
+}
 
 class Upgrade{
 public:
     Upgrade(bool,double,std::vector<Upgrade*>,std::vector<Upgrade*>);
     ~Upgrade();
+    void updateAvailable();
     bool isAvailable();
     bool isAdded();
-    void addUpgrade();
+    void addUpgrade(Clicker);
     void wipe();
     std::vector<Upgrade*> getAvailableUpgrades();
 
@@ -33,7 +83,7 @@ Upgrade::Upgrade(bool av,double m,std::vector<Upgrade*> ch,std::vector<Upgrade*>
 Upgrade::~Upgrade(){
 
 }
-void Upgrade::addUpgrade(){
+void Upgrade::addUpgrade(Clicker toBeUpgraded){
     added = true;
     //Update availabilty of children upon addition of upgrade
     /*
@@ -44,10 +94,9 @@ void Upgrade::addUpgrade(){
     for(auto x : this->children){
         x->isAvailable();
     }
-    //TODO
-    //Apply modifier to CPS
+    toBeUpgraded.applyUpgrade(modifier);
 }
-bool Upgrade::isAvailable(){
+void Upgrade::updateAvailable(){
     //if not already available
     if(!this->available){
         //default to available
@@ -59,6 +108,8 @@ bool Upgrade::isAvailable(){
             }
         }
     }
+}
+bool Upgrade::isAvailable(){
     return available;
 }
 bool Upgrade::isAdded(){
@@ -67,4 +118,5 @@ bool Upgrade::isAdded(){
 void Upgrade::wipe(){
     added = false;
 }
+
 #endif // MAIN_H
