@@ -18,14 +18,12 @@ public:
     void updateUi();
 
 private slots:
-    void on_pushButton_clicked();
 
-    void on_lcdNumber_overflow();
-
-    void on_lcdNumber_windowIconTextChanged(const QString &iconText);
+    void on_Click_clicked();
 
 private:
     Ui::MainWindow *ui;
+    unsigned long long int cookies = 0;
 };
 
 #endif // MAINWINDOW_H
