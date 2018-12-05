@@ -163,5 +163,5 @@ void Clicker::on_addButton_clicked()
 
 void Clicker::on_deleteButton_clicked()
 {
-    delete ui->verticalLayout_4->takeAt(0);
+    //delete ui->verticalLayout_4->takeAt(0);
 }
