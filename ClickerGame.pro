@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-11-23T16:16:33
+# Project created by QtCreator 2018-12-04T17:55:04
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = CCC_V_1
+TARGET = ClickerGame
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -26,14 +26,13 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        clicker.cpp
 
 HEADERS += \
-        mainwindow.h \
-    main.h
+        clicker.h
 
 FORMS += \
-        mainwindow.ui
+        clicker.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
