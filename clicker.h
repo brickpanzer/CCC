@@ -33,6 +33,10 @@ private slots:
 
     void on_actionReset_triggered();
 
+    void on_addButton_clicked();
+
+    void on_deleteButton_clicked();
+
 private:
     int cps = 0;
     int count = 0;
