@@ -165,3 +165,19 @@ void Clicker::on_deleteButton_clicked()
 {
     //delete ui->verticalLayout_4->takeAt(0);
 }
+
+void Clicker::on_pushButton_clicked()
+{
+    ui->pushButton_3->setVisible(true);
+}
+
+void Clicker::on_pushButton_2_clicked()
+{
+    ui->pushButton_3->setVisible(false);
+}
+
+void Clicker::on_pushButton_3_clicked()
+{
+    count++;
+    ui->Display->setText(QString::number(count,10));
+}

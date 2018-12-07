@@ -173,7 +173,15 @@
       <height>471</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4"/>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QPushButton" name="ClickerButton">
     <property name="geometry">
@@ -264,30 +272,30 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="addButton">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
       <x>620</x>
       <y>40</y>
-      <width>91</width>
-      <height>23</height>
+      <width>80</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>add</string>
+     <string>Visible</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="deleteButton">
+   <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>714</x>
+      <x>710</x>
       <y>40</y>
-      <width>81</width>
-      <height>23</height>
+      <width>80</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>delete</string>
+     <string>Invisible</string>
     </property>
    </widget>
   </widget>
@@ -297,7 +305,7 @@
      <x>0</x>
      <y>0</y>
      <width>873</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuReset">
