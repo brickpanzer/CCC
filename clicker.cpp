@@ -40,31 +40,53 @@ Clicker::~Clicker()
 }
 
 void Clicker::gameBuilder(){
-
     UpgradeClass *U_1_C_1 = new UpgradeClass("C1-1",1.5,true,ui->u_1_c_1);
     UpgradeClass *U_2_C_1 = new UpgradeClass("C1-2",2.0,false,ui->u_2_c_1);
     UpgradeClass *U_3_C_1 = new UpgradeClass("C1-3",2.0,false,ui->u_3_c_1);
+    upgrades.push_back(U_1_C_1);
+    upgrades.push_back(U_2_C_1);
+    upgrades.push_back(U_3_C_1);
 
     UpgradeClass *U_1_C_2 = new UpgradeClass("C2-1",1.5,false,ui->u_1_c_2);
     UpgradeClass *U_2_C_2 = new UpgradeClass("C2-2",2.0,false,ui->u_2_c_2);
     UpgradeClass *U_3_C_2 = new UpgradeClass("C2-3",2.0,false,ui->u_3_c_2);
+    upgrades.push_back(U_1_C_2);
+    upgrades.push_back(U_2_C_2);
+    upgrades.push_back(U_3_C_2);
 
     UpgradeClass *U_1_C_3 = new UpgradeClass("C3-1",1.5,false,ui->u_1_c_3);
     UpgradeClass *U_2_C_3 = new UpgradeClass("C3-2",2.0,false,ui->u_2_c_3);
     UpgradeClass *U_3_C_3 = new UpgradeClass("C3-3",2.0,false,ui->u_3_c_3);
+    upgrades.push_back(U_1_C_3);
+    upgrades.push_back(U_2_C_3);
+    upgrades.push_back(U_3_C_3);
 
     UpgradeClass *U_1_C_4 = new UpgradeClass("C4-1",1.5,false,ui->u_1_c_4);
     UpgradeClass *U_2_C_4 = new UpgradeClass("C4-2",2.0,false,ui->u_2_c_4);
     UpgradeClass *U_3_C_4 = new UpgradeClass("C4-3",2.0,false,ui->u_3_c_4);
+    upgrades.push_back(U_1_C_4);
+    upgrades.push_back(U_2_C_4);
+    upgrades.push_back(U_3_C_4);
 
     UpgradeClass *U_1_C_5 = new UpgradeClass("C5-1",1.5,false,ui->u_1_c_5);
     UpgradeClass *U_2_C_5 = new UpgradeClass("C5-2",2.0,false,ui->u_2_c_5);
     UpgradeClass *U_3_C_5 = new UpgradeClass("C5-3",2.0,false,ui->u_3_c_5);
+    upgrades.push_back(U_1_C_5);
+    upgrades.push_back(U_2_C_5);
+    upgrades.push_back(U_3_C_5);
 
 }
 
 void Clicker::gameUpdater()
 {
+    for(auto &it : upgrades){
+        if(it->isAvailable()){
+            it->getButton()->setVisible(true);
+        }
+        else{
+            it->getButton()->setVisible(false);
+        }
+    }
     count = count + cps;
     ui->Display->setText(QString::number(count,10));
     ui->cpsDisplay->setText(QString::number(cps,10));

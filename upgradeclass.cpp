@@ -15,7 +15,7 @@ UpgradeClass::~UpgradeClass(){
 }
 
 bool UpgradeClass::isAvailable(){
-    return true;
+    return available;
 }
 
 void UpgradeClass::setAvailability(){
@@ -28,4 +28,8 @@ double UpgradeClass::getModifier(){
 
 void UpgradeClass::addDescendants(std::vector<UpgradeClass *>, std::vector<UpgradeClass *>){
 
+}
+
+QPushButton* UpgradeClass::getButton(){
+    return button;
 }

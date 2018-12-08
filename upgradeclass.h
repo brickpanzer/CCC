@@ -18,6 +18,7 @@ public:
     void setAvailability();
     double getModifier();
     void addDescendants(std::vector<UpgradeClass*>,std::vector<UpgradeClass*>);
+    QPushButton* getButton();
 private:
     QPushButton* button;
     std::string type;

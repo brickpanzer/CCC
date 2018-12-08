@@ -53,6 +53,7 @@ private slots:
     void on_pushButton_7_clicked();
 
 private:
+    std::vector<UpgradeClass*> upgrades;
     int cps = 0;
     int count = 0;
 
