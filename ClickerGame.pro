@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        clicker.cpp
+        clicker.cpp \
+    upgradeclass.cpp
 
 HEADERS += \
-        clicker.h
+        clicker.h \
+    upgradeclass.h
 
 FORMS += \
         clicker.ui

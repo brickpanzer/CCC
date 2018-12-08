@@ -1,4 +1,6 @@
 #include "clicker.h"
+#include "upgradeclass.h"
+#include "upgradeclass.cpp"
 #include "ui_clicker.h"
 #include <QString>
 #include <cmath>
@@ -35,6 +37,30 @@ Clicker::Clicker(QWidget *parent) :
 Clicker::~Clicker()
 {
     delete ui;
+}
+
+void Clicker::gameBuilder(){
+
+    UpgradeClass *U_1_C_1 = new UpgradeClass("C1-1",1.5,true,ui->u_1_c_1);
+    UpgradeClass *U_2_C_1 = new UpgradeClass("C1-2",2.0,false,ui->u_2_c_1);
+    UpgradeClass *U_3_C_1 = new UpgradeClass("C1-3",2.0,false,ui->u_3_c_1);
+
+    UpgradeClass *U_1_C_2 = new UpgradeClass("C2-1",1.5,false,ui->u_1_c_2);
+    UpgradeClass *U_2_C_2 = new UpgradeClass("C2-2",2.0,false,ui->u_2_c_2);
+    UpgradeClass *U_3_C_2 = new UpgradeClass("C2-3",2.0,false,ui->u_3_c_2);
+
+    UpgradeClass *U_1_C_3 = new UpgradeClass("C3-1",1.5,false,ui->u_1_c_3);
+    UpgradeClass *U_2_C_3 = new UpgradeClass("C3-2",2.0,false,ui->u_2_c_3);
+    UpgradeClass *U_3_C_3 = new UpgradeClass("C3-3",2.0,false,ui->u_3_c_3);
+
+    UpgradeClass *U_1_C_4 = new UpgradeClass("C4-1",1.5,false,ui->u_1_c_4);
+    UpgradeClass *U_2_C_4 = new UpgradeClass("C4-2",2.0,false,ui->u_2_c_4);
+    UpgradeClass *U_3_C_4 = new UpgradeClass("C4-3",2.0,false,ui->u_3_c_4);
+
+    UpgradeClass *U_1_C_5 = new UpgradeClass("C5-1",1.5,false,ui->u_1_c_5);
+    UpgradeClass *U_2_C_5 = new UpgradeClass("C5-2",2.0,false,ui->u_2_c_5);
+    UpgradeClass *U_3_C_5 = new UpgradeClass("C5-3",2.0,false,ui->u_3_c_5);
+
 }
 
 void Clicker::gameUpdater()
@@ -156,9 +182,9 @@ void Clicker::on_actionReset_triggered()
 
 void Clicker::on_addButton_clicked()
 {
-    QPushButton *button = new QPushButton(this);
-    button->setText(QString::fromStdString("New Button"));
-    ui->verticalLayout_4->addWidget(button);
+//    QPushButton *button = new QPushButton(this);
+//    button->setText(QString::fromStdString("New Button"));
+//    ui->verticalLayout_4->addWidget(button);
 }
 
 void Clicker::on_deleteButton_clicked()
@@ -168,16 +194,26 @@ void Clicker::on_deleteButton_clicked()
 
 void Clicker::on_pushButton_clicked()
 {
-    ui->pushButton_3->setVisible(true);
+    //ui->pushButton_3->setVisible(true);
 }
 
 void Clicker::on_pushButton_2_clicked()
 {
-    ui->pushButton_3->setVisible(false);
+   // ui->pushButton_3->setVisible(false);
 }
 
 void Clicker::on_pushButton_3_clicked()
 {
-    count++;
-    ui->Display->setText(QString::number(count,10));
+//    count++;
+//    ui->Display->setText(QString::number(count,10));
+}
+
+void Clicker::on_pushButton_6_clicked()
+{
+    //ui->pushButton_4->setVisible(true);
+}
+
+void Clicker::on_pushButton_7_clicked()
+{
+    //ui->pushButton_4->setVisible(false);
 }

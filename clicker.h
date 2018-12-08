@@ -1,6 +1,9 @@
 #ifndef CLICKER_H
 #define CLICKER_H
 
+#include "upgradeclass.h"
+#include <QWidget>
+#include <QVector>
 #include <QMainWindow>
 #include <QTimer>
 
@@ -17,6 +20,8 @@ public:
     ~Clicker();
 
 private slots:
+    void gameBuilder();
+
     void gameUpdater();
 
     void on_ClickerButton_clicked();
@@ -42,6 +47,10 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
 
 private:
     int cps = 0;

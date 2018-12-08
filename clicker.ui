@@ -175,9 +175,107 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="u_1_c_1">
        <property name="text">
-        <string>PushButton</string>
+        <string>Auto Clicker Enhancer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_2_c_1">
+       <property name="text">
+        <string>Better Auto Clicker Circuts</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_3_c_1">
+       <property name="text">
+        <string>Well Oiled Auto Clickers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_1_c_2">
+       <property name="text">
+        <string>Super Clicker Enhancer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_2_c_2">
+       <property name="text">
+        <string>Polished Super Clickers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_3_c_2">
+       <property name="text">
+        <string>Luxurious Super Clickers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_1_c_3">
+       <property name="text">
+        <string>Mega Clicker Enhancer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_2_c_3">
+       <property name="text">
+        <string>Reinforced Mega Clickers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_3_c_3">
+       <property name="text">
+        <string>Carbon Fibre Mega Clickers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_1_c_4">
+       <property name="text">
+        <string>Quantum Clicker Enhancer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_2_c_4">
+       <property name="text">
+        <string>Energized Quantum Clcikers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_3_c_4">
+       <property name="text">
+        <string>Bose-Einstein Quantum Clickers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_1_c_5">
+       <property name="text">
+        <string>Spiral Out</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_2_c_5">
+       <property name="text">
+        <string>Keep Going</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="u_3_c_5">
+       <property name="text">
+        <string>The Holy Gift</string>
        </property>
       </widget>
      </item>
@@ -270,32 +368,6 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>40</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Visible</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>40</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Invisible</string>
     </property>
    </widget>
   </widget>
