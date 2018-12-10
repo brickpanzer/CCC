@@ -19,15 +19,31 @@ bool UpgradeClass::isAvailable(){
 }
 
 void UpgradeClass::setAvailability(){
-
+    if(!available){
+        available = true;
+        for(auto x : parents){
+            if(!x->isAvailable()){
+                available = false;
+            }
+        }
+    }
 }
 
 double UpgradeClass::getModifier(){
-    return 0.0;
+    return modifier;
 }
 
-void UpgradeClass::addDescendants(std::vector<UpgradeClass *>, std::vector<UpgradeClass *>){
-
+void UpgradeClass::addDescendants(std::vector<UpgradeClass *> p, std::vector<UpgradeClass *> c){
+    unsigned int i = 0;
+    for(auto x : p){
+        parents.at(i) = x;
+        i++;
+    }
+    i = 0;
+    for(auto y : c){
+        children.at(i) = y;
+        i++;
+    }
 }
 
 QPushButton* UpgradeClass::getButton(){

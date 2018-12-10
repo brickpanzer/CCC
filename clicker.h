@@ -18,9 +18,9 @@ class Clicker : public QMainWindow
 public:
     explicit Clicker(QWidget *parent = nullptr);
     ~Clicker();
+    void gameBuilder();
 
 private slots:
-    void gameBuilder();
 
     void gameUpdater();
 
@@ -38,19 +38,35 @@ private slots:
 
     void on_actionReset_triggered();
 
-    void on_addButton_clicked();
+    void on_c1u1_clicked();
 
-    void on_deleteButton_clicked();
+    void on_c1u2_clicked();
 
-    void on_pushButton_clicked();
+    void on_c1u3_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_c2u1_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_c2u2_clicked();
 
-    void on_pushButton_6_clicked();
+    void on_c2u3_clicked();
 
-    void on_pushButton_7_clicked();
+    void on_c3u1_clicked();
+
+    void on_c3u2_clicked();
+
+    void on_c3u3_clicked();
+
+    void on_c4u1_clicked();
+
+    void on_c4u2_clicked();
+
+    void on_c4u3_clicked();
+
+    void on_c5u1_clicked();
+
+    void on_c5u2_clicked();
+
+    void on_c5u3_clicked();
 
 private:
     std::vector<UpgradeClass*> upgrades;

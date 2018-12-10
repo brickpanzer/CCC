@@ -40,37 +40,38 @@ Clicker::~Clicker()
 }
 
 void Clicker::gameBuilder(){
-    UpgradeClass *U_1_C_1 = new UpgradeClass("C1-1",1.5,true,ui->u_1_c_1);
-    UpgradeClass *U_2_C_1 = new UpgradeClass("C1-2",2.0,false,ui->u_2_c_1);
-    UpgradeClass *U_3_C_1 = new UpgradeClass("C1-3",2.0,false,ui->u_3_c_1);
+
+    UpgradeClass *U_1_C_1 = new UpgradeClass("C1-1",1.5,true,ui->c1u1);
+    UpgradeClass *U_2_C_1 = new UpgradeClass("C1-2",2.0,false,ui->c1u2);
+    UpgradeClass *U_3_C_1 = new UpgradeClass("C1-3",2.0,false,ui->c1u3);
     upgrades.push_back(U_1_C_1);
     upgrades.push_back(U_2_C_1);
     upgrades.push_back(U_3_C_1);
 
-    UpgradeClass *U_1_C_2 = new UpgradeClass("C2-1",1.5,false,ui->u_1_c_2);
-    UpgradeClass *U_2_C_2 = new UpgradeClass("C2-2",2.0,false,ui->u_2_c_2);
-    UpgradeClass *U_3_C_2 = new UpgradeClass("C2-3",2.0,false,ui->u_3_c_2);
+    UpgradeClass *U_1_C_2 = new UpgradeClass("C2-1",1.5,false,ui->c2u1);
+    UpgradeClass *U_2_C_2 = new UpgradeClass("C2-2",2.0,false,ui->c2u2);
+    UpgradeClass *U_3_C_2 = new UpgradeClass("C2-3",2.0,false,ui->c2u3);
     upgrades.push_back(U_1_C_2);
     upgrades.push_back(U_2_C_2);
     upgrades.push_back(U_3_C_2);
 
-    UpgradeClass *U_1_C_3 = new UpgradeClass("C3-1",1.5,false,ui->u_1_c_3);
-    UpgradeClass *U_2_C_3 = new UpgradeClass("C3-2",2.0,false,ui->u_2_c_3);
-    UpgradeClass *U_3_C_3 = new UpgradeClass("C3-3",2.0,false,ui->u_3_c_3);
+    UpgradeClass *U_1_C_3 = new UpgradeClass("C3-1",1.5,false,ui->c3u1);
+    UpgradeClass *U_2_C_3 = new UpgradeClass("C3-2",2.0,false,ui->c3u2);
+    UpgradeClass *U_3_C_3 = new UpgradeClass("C3-3",2.0,false,ui->c3u3);
     upgrades.push_back(U_1_C_3);
     upgrades.push_back(U_2_C_3);
     upgrades.push_back(U_3_C_3);
 
-    UpgradeClass *U_1_C_4 = new UpgradeClass("C4-1",1.5,false,ui->u_1_c_4);
-    UpgradeClass *U_2_C_4 = new UpgradeClass("C4-2",2.0,false,ui->u_2_c_4);
-    UpgradeClass *U_3_C_4 = new UpgradeClass("C4-3",2.0,false,ui->u_3_c_4);
+    UpgradeClass *U_1_C_4 = new UpgradeClass("C4-1",1.5,false,ui->c4u1);
+    UpgradeClass *U_2_C_4 = new UpgradeClass("C4-2",2.0,false,ui->c4u2);
+    UpgradeClass *U_3_C_4 = new UpgradeClass("C4-3",2.0,false,ui->c4u3);
     upgrades.push_back(U_1_C_4);
     upgrades.push_back(U_2_C_4);
     upgrades.push_back(U_3_C_4);
 
-    UpgradeClass *U_1_C_5 = new UpgradeClass("C5-1",1.5,false,ui->u_1_c_5);
-    UpgradeClass *U_2_C_5 = new UpgradeClass("C5-2",2.0,false,ui->u_2_c_5);
-    UpgradeClass *U_3_C_5 = new UpgradeClass("C5-3",2.0,false,ui->u_3_c_5);
+    UpgradeClass *U_1_C_5 = new UpgradeClass("C5-1",1.5,false,ui->c5u1);
+    UpgradeClass *U_2_C_5 = new UpgradeClass("C5-2",2.0,false,ui->c5u2);
+    UpgradeClass *U_3_C_5 = new UpgradeClass("C5-3",2.0,false,ui->c5u3);
     upgrades.push_back(U_1_C_5);
     upgrades.push_back(U_2_C_5);
     upgrades.push_back(U_3_C_5);
@@ -81,10 +82,10 @@ void Clicker::gameUpdater()
 {
     for(auto &it : upgrades){
         if(it->isAvailable()){
-            it->getButton()->setVisible(true);
+            it->getButton()->show();
         }
         else{
-            it->getButton()->setVisible(false);
+            it->getButton()->hide();
         }
     }
     count = count + cps;
@@ -202,40 +203,167 @@ void Clicker::on_actionReset_triggered()
     ui->Clicker5Cost->setText(QString::number(CLICKER_5_COST,10));
 }
 
-void Clicker::on_addButton_clicked()
+void Clicker::on_c1u1_clicked()
 {
-//    QPushButton *button = new QPushButton(this);
-//    button->setText(QString::fromStdString("New Button"));
-//    ui->verticalLayout_4->addWidget(button);
+    if(count >= 1000){
+        count = count - 1000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(0)->getModifier();
+        ui->c1u1->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
 }
 
-void Clicker::on_deleteButton_clicked()
+void Clicker::on_c1u2_clicked()
 {
-    //delete ui->verticalLayout_4->takeAt(0);
+    if(count >= 10000){
+        count = count - 10000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(1)->getModifier();
+        ui->c1u2->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
 }
 
-void Clicker::on_pushButton_clicked()
+void Clicker::on_c1u3_clicked()
 {
-    //ui->pushButton_3->setVisible(true);
+    if(count >= 100000){
+        count = count - 100000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(2)->getModifier();
+        ui->c1u3->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
 }
 
-void Clicker::on_pushButton_2_clicked()
+void Clicker::on_c2u1_clicked()
 {
-   // ui->pushButton_3->setVisible(false);
+    if(count >= 10000){
+        count = count - 10000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(3)->getModifier();
+        ui->c2u1->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
 }
 
-void Clicker::on_pushButton_3_clicked()
+void Clicker::on_c2u2_clicked()
 {
-//    count++;
-//    ui->Display->setText(QString::number(count,10));
+    if(count >= 100000){
+        count = count - 100000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(4)->getModifier();
+        ui->c2u2->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
 }
 
-void Clicker::on_pushButton_6_clicked()
+void Clicker::on_c2u3_clicked()
 {
-    //ui->pushButton_4->setVisible(true);
+    if(count >= 1000000){
+        count = count - 1000000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(5)->getModifier();
+        ui->c2u3->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
 }
 
-void Clicker::on_pushButton_7_clicked()
+void Clicker::on_c3u1_clicked()
 {
-    //ui->pushButton_4->setVisible(false);
+    if(count >= 30000){
+        count = count - 30000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(6)->getModifier();
+        ui->c3u1->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
+}
+
+void Clicker::on_c3u2_clicked()
+{
+    if(count >= 300000){
+        count = count - 300000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(7)->getModifier();
+        ui->c3u2->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
+}
+
+void Clicker::on_c3u3_clicked()
+{
+    if(count >= 3000000){
+        count = count - 3000000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(8)->getModifier();
+        ui->c3u3->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
+}
+
+void Clicker::on_c4u1_clicked()
+{
+    if(count >= 100000){
+        count = count - 100000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(9)->getModifier();
+        ui->c4u1->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
+}
+
+void Clicker::on_c4u2_clicked()
+{
+    if(count >= 1000000){
+        count = count - 1000000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(10)->getModifier();
+        ui->c4u2->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
+}
+
+void Clicker::on_c4u3_clicked()
+{
+    if(count >= 10000000){
+        count = count - 10000000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(11)->getModifier();
+        ui->c4u3->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
+}
+
+void Clicker::on_c5u1_clicked()
+{
+    if(count >= 500000){
+        count = count - 500000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(12)->getModifier();
+        ui->c1u1->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
+}
+
+void Clicker::on_c5u2_clicked()
+{
+    if(count >= 5000000){
+        count = count - 5000000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(13)->getModifier();
+        ui->c1u1->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
+}
+
+void Clicker::on_c5u3_clicked()
+{
+    if(count >= 50000000){
+        count = count - 50000000;
+        cps += CLICKER_1_COUNT * this->upgrades.at(14)->getModifier();
+        ui->c1u1->hide();
+        ui->Display->setText(QString::number(count,10));
+        ui->cpsDisplay->setText(QString::number(cps,10));
+    }
 }
