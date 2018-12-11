@@ -76,6 +76,167 @@ void Clicker::gameBuilder(){
     upgrades.push_back(U_2_C_5);
     upgrades.push_back(U_3_C_5);
 
+    //PARENTS FIRST, CHILDREN SECOND
+
+    //U1 - 1 parents - 2 children
+    //U2 - 2 parents - 2 children
+    //U3 - 3 parents - 1 children
+
+    std::vector<UpgradeClass*> parents;
+    std::vector<UpgradeClass*> children;
+    parents.clear();
+    children.clear();
+
+    //C1U1
+    //Parents: none
+    //Children: C1U2, C2U1
+    children.push_back(U_2_C_1);
+    children.push_back(U_1_C_2);
+    U_1_C_1->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C1U2
+    //Parents: C1U1
+    //Children: C1U3, C2U2
+    parents.push_back(U_1_C_1);
+    children.push_back(U_3_C_1);
+    children.push_back(U_2_C_2);
+    U_2_C_1->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C1U3
+    //Parents: C1U2, C2U1
+    //Children: C2U3
+    parents.push_back(U_2_C_1);
+    parents.push_back(U_1_C_2);
+    children.push_back(U_3_C_2);
+    U_3_C_1->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C2U1
+    //Parents: C1U1
+    //Children: C3U1, C2U2
+    parents.push_back(U_1_C_1);
+    children.push_back(U_1_C_3);
+    children.push_back(U_2_C_2);
+    U_1_C_2->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C2U2
+    //Parents: C2U1,C1U2
+    //Children: C3U2, C2U3
+    parents.push_back(U_1_C_2);
+    parents.push_back(U_2_C_1);
+    children.push_back(U_3_C_2);
+    children.push_back(U_2_C_3);
+    U_2_C_2->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C2U3
+    //Parents: C1U3,C2U2
+    //Children: C3U3
+    parents.push_back(U_3_C_1);
+    parents.push_back(U_2_C_2);
+    children.push_back(U_3_C_3);
+    U_3_C_2->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C3U1
+    //Parents: C2U1
+    //Children: C4U1, C3U2
+    parents.push_back(U_1_C_2);
+    children.push_back(U_1_C_4);
+    children.push_back(U_2_C_3);
+    U_1_C_3->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C3U2
+    //Parents: C2U2,C3U1
+    //Children: C4U2, C3U3
+    parents.push_back(U_2_C_2);
+    parents.push_back(U_1_C_3);
+    children.push_back(U_3_C_3);
+    children.push_back(U_2_C_4);
+    U_2_C_3->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C3U3
+    //Parents: C2U3,C3U2
+    //Children: C4U3
+    parents.push_back(U_3_C_2);
+    parents.push_back(U_2_C_3);
+    children.push_back(U_3_C_4);
+    U_3_C_3->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C4U1
+    //Parents: C3U1
+    //Children: C4U2, C5U1
+    parents.push_back(U_1_C_3);
+    children.push_back(U_1_C_5);
+    children.push_back(U_2_C_4);
+    U_1_C_4->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C4U2
+    //Parents: C4U1,C3U2
+    //Children: C5U2, C4U3
+    parents.push_back(U_1_C_4);
+    parents.push_back(U_2_C_3);
+    children.push_back(U_3_C_4);
+    children.push_back(U_2_C_5);
+    U_2_C_4->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C4U3
+    //Parents: C3U3,C4U2
+    //Children: C5U3
+    parents.push_back(U_3_C_3);
+    parents.push_back(U_2_C_4);
+    children.push_back(U_3_C_5);
+    U_3_C_4->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C5U1
+    //Parents: C4U1
+    //Children: C5U2
+    parents.push_back(U_1_C_4);
+    children.push_back(U_2_C_5);
+    U_1_C_5->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C5U2
+    //Parents: C5U1,C4U2
+    //Children: C5U3
+    parents.push_back(U_2_C_4);
+    parents.push_back(U_1_C_5);
+    children.push_back(U_3_C_5);
+    U_2_C_5->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
+    //C5U3
+    //Parents: C5U2,C4U3
+    //Children: none
+    parents.push_back(U_2_C_5);
+    parents.push_back(U_3_C_4);
+    U_3_C_5->addDescendants(parents,children);
+    parents.clear();
+    children.clear();
+
 }
 
 void Clicker::gameUpdater()

@@ -1,4 +1,4 @@
-#include "UpgradeClass.h"
+#include "upgradeclass.h"
 #include <QMainWindow>
 
 using namespace std;
@@ -8,6 +8,7 @@ UpgradeClass::UpgradeClass(std::string name, double mod, bool a, QPushButton* b)
     modifier = mod;
     available = a;
     button = b;
+    b->setVisible(a);
 }
 
 UpgradeClass::~UpgradeClass(){
