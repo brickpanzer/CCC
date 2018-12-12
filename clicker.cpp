@@ -242,7 +242,7 @@ void Clicker::gameBuilder(){
 void Clicker::gameUpdater()
 {
     for(auto &it : upgrades){
-        if(it->isAvailable() and it->isPurchased() != true){
+        if(it->isAvailable() and !it->isPurchased()){
             it->getButton()->show();
         }
         else{

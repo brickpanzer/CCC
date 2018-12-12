@@ -18,6 +18,9 @@ UpgradeClass::~UpgradeClass(){
 
 void UpgradeClass::bought(){
     purchased = true;
+    for(auto x : children){
+        x->setAvailability();
+    }
 }
 
 bool UpgradeClass::isAvailable(){
