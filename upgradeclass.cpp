@@ -4,6 +4,7 @@
 using namespace std;
 
 UpgradeClass::UpgradeClass(std::string name, double mod, bool a, QPushButton* b){
+    purchased = false;
     type = name;
     modifier = mod;
     available = a;
@@ -15,8 +16,16 @@ UpgradeClass::~UpgradeClass(){
 
 }
 
+void UpgradeClass::bought(){
+    purchased = true;
+}
+
 bool UpgradeClass::isAvailable(){
     return available;
+}
+
+bool UpgradeClass::isPurchased(){
+    return purchased;
 }
 
 void UpgradeClass::setAvailability(){
@@ -35,16 +44,8 @@ double UpgradeClass::getModifier(){
 }
 
 void UpgradeClass::addDescendants(std::vector<UpgradeClass *> p, std::vector<UpgradeClass *> c){
-    unsigned int i = 0;
-    for(auto x : p){
-        parents.at(i) = x;
-        i++;
-    }
-    i = 0;
-    for(auto y : c){
-        children.at(i) = y;
-        i++;
-    }
+    parents = p;
+    children = c;
 }
 
 QPushButton* UpgradeClass::getButton(){

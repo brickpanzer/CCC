@@ -14,7 +14,9 @@ class UpgradeClass
 public:
     UpgradeClass(std::string,double,bool,QPushButton*);
     ~UpgradeClass();
+    void bought();
     bool isAvailable();
+    bool isPurchased();
     void setAvailability();
     double getModifier();
     void addDescendants(std::vector<UpgradeClass*>,std::vector<UpgradeClass*>);
@@ -24,6 +26,7 @@ private:
     std::string type;
     double modifier;
     bool available;
+    bool purchased;
     std::vector<UpgradeClass*> parents;
     std::vector<UpgradeClass*> children;
 };

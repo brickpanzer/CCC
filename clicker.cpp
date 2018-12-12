@@ -242,7 +242,7 @@ void Clicker::gameBuilder(){
 void Clicker::gameUpdater()
 {
     for(auto &it : upgrades){
-        if(it->isAvailable()){
+        if(it->isAvailable() && !it->isPurchased()){
             it->getButton()->show();
         }
         else{
@@ -380,7 +380,7 @@ void Clicker::on_c1u2_clicked()
     if(count >= 10000){
         count = count - 10000;
         cps += CLICKER_1_COUNT * this->upgrades.at(1)->getModifier();
-        ui->c1u2->hide();
+        this->upgrades.at(1)->bought();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
     }
@@ -391,6 +391,7 @@ void Clicker::on_c1u3_clicked()
     if(count >= 100000){
         count = count - 100000;
         cps += CLICKER_1_COUNT * this->upgrades.at(2)->getModifier();
+        this->upgrades.at(2)->bought();
         ui->c1u3->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -402,6 +403,7 @@ void Clicker::on_c2u1_clicked()
     if(count >= 10000){
         count = count - 10000;
         cps += CLICKER_1_COUNT * this->upgrades.at(3)->getModifier();
+        this->upgrades.at(3)->bought();
         ui->c2u1->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -413,6 +415,7 @@ void Clicker::on_c2u2_clicked()
     if(count >= 100000){
         count = count - 100000;
         cps += CLICKER_1_COUNT * this->upgrades.at(4)->getModifier();
+        this->upgrades.at(4)->bought();
         ui->c2u2->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -424,6 +427,7 @@ void Clicker::on_c2u3_clicked()
     if(count >= 1000000){
         count = count - 1000000;
         cps += CLICKER_1_COUNT * this->upgrades.at(5)->getModifier();
+        this->upgrades.at(5)->bought();
         ui->c2u3->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -435,6 +439,7 @@ void Clicker::on_c3u1_clicked()
     if(count >= 30000){
         count = count - 30000;
         cps += CLICKER_1_COUNT * this->upgrades.at(6)->getModifier();
+        this->upgrades.at(6)->bought();
         ui->c3u1->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -446,6 +451,7 @@ void Clicker::on_c3u2_clicked()
     if(count >= 300000){
         count = count - 300000;
         cps += CLICKER_1_COUNT * this->upgrades.at(7)->getModifier();
+        this->upgrades.at(7)->bought();
         ui->c3u2->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -457,6 +463,7 @@ void Clicker::on_c3u3_clicked()
     if(count >= 3000000){
         count = count - 3000000;
         cps += CLICKER_1_COUNT * this->upgrades.at(8)->getModifier();
+        this->upgrades.at(8)->bought();
         ui->c3u3->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -468,6 +475,7 @@ void Clicker::on_c4u1_clicked()
     if(count >= 100000){
         count = count - 100000;
         cps += CLICKER_1_COUNT * this->upgrades.at(9)->getModifier();
+        this->upgrades.at(9)->bought();
         ui->c4u1->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -479,6 +487,7 @@ void Clicker::on_c4u2_clicked()
     if(count >= 1000000){
         count = count - 1000000;
         cps += CLICKER_1_COUNT * this->upgrades.at(10)->getModifier();
+        this->upgrades.at(10)->bought();
         ui->c4u2->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -490,6 +499,7 @@ void Clicker::on_c4u3_clicked()
     if(count >= 10000000){
         count = count - 10000000;
         cps += CLICKER_1_COUNT * this->upgrades.at(11)->getModifier();
+        this->upgrades.at(11)->bought();
         ui->c4u3->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -501,6 +511,7 @@ void Clicker::on_c5u1_clicked()
     if(count >= 500000){
         count = count - 500000;
         cps += CLICKER_1_COUNT * this->upgrades.at(12)->getModifier();
+        this->upgrades.at(12)->bought();
         ui->c1u1->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -512,6 +523,7 @@ void Clicker::on_c5u2_clicked()
     if(count >= 5000000){
         count = count - 5000000;
         cps += CLICKER_1_COUNT * this->upgrades.at(13)->getModifier();
+        this->upgrades.at(13)->bought();
         ui->c1u1->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
@@ -523,6 +535,7 @@ void Clicker::on_c5u3_clicked()
     if(count >= 50000000){
         count = count - 50000000;
         cps += CLICKER_1_COUNT * this->upgrades.at(14)->getModifier();
+        this->upgrades.at(14)->bought();
         ui->c1u1->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
