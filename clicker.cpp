@@ -242,7 +242,7 @@ void Clicker::gameBuilder(){
 void Clicker::gameUpdater()
 {
     for(auto &it : upgrades){
-        if(it->isAvailable() && !it->isPurchased()){
+        if(it->isAvailable() and it->isPurchased() != true){
             it->getButton()->show();
         }
         else{
@@ -369,6 +369,7 @@ void Clicker::on_c1u1_clicked()
     if(count >= 1000){
         count = count - 1000;
         cps += CLICKER_1_COUNT * this->upgrades.at(0)->getModifier();
+        this->upgrades.at(0)->bought();
         ui->c1u1->hide();
         ui->Display->setText(QString::number(count,10));
         ui->cpsDisplay->setText(QString::number(cps,10));
