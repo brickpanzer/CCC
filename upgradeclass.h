@@ -21,6 +21,9 @@ public:
     double getModifier();
     void addDescendants(std::vector<UpgradeClass*>,std::vector<UpgradeClass*>);
     QPushButton* getButton();
+    void reset();
+    void overideAvailable(bool);
+    void overidePurchased(bool);
 private:
     QPushButton* button;
     std::string type;

@@ -345,6 +345,11 @@ void Clicker::on_actionReset_triggered()
     CLICKER_5_COUNT = 0;
     CLICKER_5_COST = 5000;
 
+    for(auto &x : upgrades){
+        x->reset();
+    }
+    upgrades.at(0)->overideAvailable(true);
+
     ui->Display->setText(QString::number(count,10));
     ui->cpsDisplay->setText(QString::number(cps,10));
 
@@ -362,6 +367,7 @@ void Clicker::on_actionReset_triggered()
 
     ui->Clicker5Count->setText(QString::number(CLICKER_5_COUNT,10));
     ui->Clicker5Cost->setText(QString::number(CLICKER_5_COST,10));
+
 }
 
 void Clicker::on_c1u1_clicked()

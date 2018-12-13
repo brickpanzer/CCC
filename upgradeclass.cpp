@@ -54,3 +54,16 @@ void UpgradeClass::addDescendants(std::vector<UpgradeClass *> p, std::vector<Upg
 QPushButton* UpgradeClass::getButton(){
     return button;
 }
+
+void UpgradeClass::reset(){
+    purchased = false;
+    available = false;
+}
+
+void UpgradeClass::overideAvailable(bool b){
+    available = b;
+}
+
+void UpgradeClass::overidePurchased(bool b){
+    purchased = b;
+}
