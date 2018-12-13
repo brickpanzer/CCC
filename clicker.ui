@@ -13,6 +13,65 @@
   <property name="windowTitle">
    <string>Clicker</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color:#1d1d1d;
+}
+
+QMenuBar{
+background-color:#1d1d1d;
+
+}
+
+QMenuBar::item{
+background-color:#1d1d1d;
+color:#fff;
+padding:5px;
+
+}
+
+QMenu{
+color:#fff;
+padding:0;
+}
+
+QMenu::item:selected{
+color:#fff;
+background-color:#00aba9;
+}
+
+QMenu{
+background-color:#3d3d3d;
+}
+QStatusBar{
+
+color:#fff;
+}
+
+QPushButton{
+border-style:solid;
+
+background-color:#3d3d3d;
+color:#fff;
+border-radius:7px;
+}
+QPushButton:hover{
+color:#ccc;
+	background-color: qlineargradient(spread:pad, x1:0.517, y1:0, x2:0.517, y2:1, stop:0 rgba(45, 45, 45, 255), stop:0.505682 rgba(45, 45, 45, 255), stop:1 rgba(29, 29, 29, 255));
+	border-color:#2d89ef;
+border-width:2px;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.517, y1:0, x2:0.517, y2:1, stop:0 rgba(29, 29, 29, 255), stop:0.505682 rgba(45, 45, 45, 255), stop:1 rgba(29, 29, 29, 255));
+}
+
+QLineEdit{
+border-radius:0;
+background-color:#3d3d3d;
+color:#fff;
+}</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -26,6 +85,31 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QPushButton" name="Clicker1">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+border-style:solid;
+
+background-color:#3d3d3d;
+color:#fff;
+border-radius:7px;
+}
+QPushButton:hover{
+color:#ccc;
+	background-color: qlineargradient(spread:pad, x1:0.517, y1:0, x2:0.517, y2:1, stop:0 rgba(45, 45, 45, 255), stop:0.505682 rgba(45, 45, 45, 255), stop:1 rgba(29, 29, 29, 255));
+	border-color:#2d89ef;
+border-width:2px;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.517, y1:0, x2:0.517, y2:1, stop:0 rgba(29, 29, 29, 255), stop:0.505682 rgba(45, 45, 45, 255), stop:1 rgba(29, 29, 29, 255));
+}
+
+QLineEdit{
+border-radius:0;
+background-color:#3d3d3d;
+color:#fff;
+}</string>
+       </property>
        <property name="text">
         <string>Auto Clicker</string>
        </property>
@@ -377,7 +461,7 @@
      <x>0</x>
      <y>0</y>
      <width>873</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuReset">
